@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Полное описание фильма</title>
+</head>
+<body>
+    <h1>Название: {{ movie.name }}</h1>
+    <p>Описание: {{ movie.description }}</p>
+    <p>Год выпуска: {{ movie.year }}</p>
+    <p>Жанр фильма: {{ movie.genre }}</p>
+    <p><b>Рецензии на фильм:</b><br>
+        {% for review in reviews.all %}
+            <p>Имя пользователя: {{ review.name }}</p>
+            <p>Электронная почта: {{ review.email }}</p>
+            <p>Текст рецензии: {{ review.text }}</p>
+        {% endfor %}
+    </p>
+</body>
+</html>
